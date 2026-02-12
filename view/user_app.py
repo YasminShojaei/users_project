@@ -16,6 +16,9 @@ class MainProgramm:
 
         user_input = input()
 
+    def enter_database(self):
+        pass
+
 
 
 
