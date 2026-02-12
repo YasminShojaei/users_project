@@ -13,5 +13,5 @@ class UserController:
             user_repo.save(user)
             return True
         except Exception as e:
-            return False, f"error: {e}"
+            return False, f"error is: {e}"
 

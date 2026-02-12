@@ -1,6 +1,6 @@
 import os
 import sqlite3
-
+from controller import *
 
 class UserRepository:
     def __init__(self):

@@ -1,7 +1,7 @@
 from controller import user_controller
 
 
-class MainProgramm:
+class MainProgram:
 
     def __init__(self):
         pass

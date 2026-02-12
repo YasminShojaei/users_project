@@ -17,6 +17,3 @@ def create_database():
         print("Error:", e)
     finally:
         connection.close()
-
-
-create_database()
