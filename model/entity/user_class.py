@@ -1,6 +1,41 @@
+from model.tools import validation
+from model.tools.validation import id_validator, username_validator, password_validator
+
+
 class User:
     def __init__(self, user_id, username, password):
         self.user_id = user_id
         self.username = username
         self.password = password
+
+
+    @property
+    def _user_id(self):
+        return
+
+    @_user_id.setter
+    def _user_id(self, value):
+        id_validator(value)
+        self._user_id = value
+
+    @property
+    def _username(self):
+        return
+
+    @_username.setter
+    def _username(self, value):
+        username_validator(value)
+        self._username = value
+
+    @property
+    def _password(self):
+        return
+
+    @_password.setter
+    def _password(self, value):
+        password_validator(value)
+        self._password = value
+
+
+
 
