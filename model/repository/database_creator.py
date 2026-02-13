@@ -1,19 +1,14 @@
 import sqlite3
+from model.repository.db_config import DB_PATH
 
 def create_database():
-    try:
-        connection = sqlite3.connect('users_db.sqlite')
-        cursor = connection.cursor()
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS users (
-                user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT NOT NULL UNIQUE,
-                password TEXT NOT NULL
-            )
-        ''')
-        connection.commit()
-        print("Database and table created")
-    except Exception as e:
-        print("Error:", e)
-    finally:
-        connection.close()
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            user_id INTEGER PRIMARY KEY,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+        """)
+    print("Database and table created")

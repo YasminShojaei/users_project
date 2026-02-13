@@ -10,7 +10,7 @@ class UserController:
         try:
             user = User(user_id, username, password)
             user_repo = UserRepository()
-            user_repo.save(user)
+            user_repo.save_user(user)
             return True
         except Exception as e:
             return False, f"error: {e}"
