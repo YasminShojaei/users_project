@@ -39,19 +39,13 @@ class MainProgram:
         username = input("Username (email): ").strip()
         password = input("Password: ").strip()
 
-        result = self.user_controller.save_user(username, password)
-        print(f"User saved successfully with ID: {result}")
-
-        if result:
-            print("User saved successfully.")
-        elif isinstance(result, tuple) and len(result) == 1:
-            print(result[0])
-        else:
-            print("User could not be saved.")
-
+        try:
+            user_id = self.user_controller.save_user(username, password)
+            print(f"User saved successfully with ID: {user_id}")
+        except Exception as e:
+            print(f"Error: {e}")
 
 if __name__ == "__main__":
     create_database()
     app = MainProgram()
     app.menu()
-

@@ -5,19 +5,18 @@ def id_validator(user_id):
         raise TypeError('id must be an integer')
 
 
-import re
-
-
 def username_validator(username):
     if not isinstance(username, str):
         raise TypeError("username must be a string")
 
-    pattern = r'^[^@]+@[^@]+\.[^@]+$'
+    # ایمیل معتبر باید:
+    # 1. حداقل یک کاراکتر قبل از @
+    # 2. بعد از @ حداقل یک حرف یا عدد
+    # 3. بعد از نقطه حداقل دو حرف (مثل .com, .ir)
+    pattern = r'^[^@]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}$'
+
     if not re.match(pattern, username):
         raise ValueError("username must be a valid email address like: a@domain.com")
-
-
-import re
 
 
 def password_validator(password):

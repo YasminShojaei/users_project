@@ -1,6 +1,4 @@
-from model.entity import user_class
 from model.entity.user_class import User
-from model.repository import user_repository
 from model.repository.user_repository import UserRepository
 
 

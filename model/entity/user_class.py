@@ -15,7 +15,8 @@ class User:
 
     @user_id.setter
     def user_id(self, value):
-        id_validator(value)
+        if value is not None:
+            id_validator(value)
         self._user_id = value
 
     @property
