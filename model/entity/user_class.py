@@ -10,29 +10,29 @@ class User:
 
 
     @property
-    def _user_id(self):
-        return
+    def user_id(self):
+        return self._user_id
 
-    @_user_id.setter
-    def _user_id(self, value):
+    @user_id.setter
+    def user_id(self, value):
         id_validator(value)
         self._user_id = value
 
     @property
-    def _username(self):
-        return
+    def username(self):
+        return self._username
 
-    @_username.setter
-    def _username(self, value):
+    @username.setter
+    def username(self, value):
         username_validator(value)
         self._username = value
 
     @property
-    def _password(self):
-        return
+    def password(self):
+        return self._password
 
-    @_password.setter
-    def _password(self, value):
+    @password.setter
+    def password(self, value):
         password_validator(value)
         self._password = value
 
