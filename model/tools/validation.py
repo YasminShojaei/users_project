@@ -9,10 +9,6 @@ def username_validator(username):
     if not isinstance(username, str):
         raise TypeError("username must be a string")
 
-    # ایمیل معتبر باید:
-    # 1. حداقل یک کاراکتر قبل از @
-    # 2. بعد از @ حداقل یک حرف یا عدد
-    # 3. بعد از نقطه حداقل دو حرف (مثل .com, .ir)
     pattern = r'^[^@]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}$'
 
     if not re.match(pattern, username):
