@@ -6,12 +6,9 @@ from model.repository.user_repository import UserRepository
 
 class UserController:
 
-    def save_user(self, user_id, username, password):
-        try:
-            user = User(user_id, username, password)
+    def save_user(self, username, password):
+            user = User(username=username, password=password)
             user_repo = UserRepository()
-            user_repo.save_user(user)
-            return True
-        except Exception as e:
-            return False, f"error: {e}"
+            return user_repo.save_user(user)
+
 

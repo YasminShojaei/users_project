@@ -33,27 +33,19 @@ class MainProgram:
                 print("Invalid option. Please choose 1 or 2.")
 
     def enter_database(self):
-        pass
-
-
 
         print("\nEnter user information:")
-
-        try:
-            user_id = int(input("User ID (integer): ").strip())
-        except ValueError:
-            print("User ID must be an integer.")
-            return
 
         username = input("Username (email): ").strip()
         password = input("Password: ").strip()
 
-        result = self.user_controller.save_user(user_id, username, password)
+        result = self.user_controller.save_user(username, password)
+        print(f"User saved successfully with ID: {result}")
 
-        if result is True:
+        if result:
             print("User saved successfully.")
-        elif isinstance(result, tuple) and len(result) == 2:
-            print(result[1])
+        elif isinstance(result, tuple) and len(result) == 1:
+            print(result[0])
         else:
             print("User could not be saved.")
 
@@ -63,10 +55,3 @@ if __name__ == "__main__":
     app = MainProgram()
     app.menu()
 
-import sqlite3
-from model.repository.db_config import DB_PATH
-
-with sqlite3.connect(DB_PATH) as conn:
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users")
-    print("FINAL CHECK:", cursor.fetchall())

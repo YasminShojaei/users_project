@@ -7,6 +7,7 @@ class UserRepository:
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
             cursor.execute(
-                "INSERT INTO users (user_id, username, password) VALUES (?, ?, ?)",
-                (user.user_id, user.username, user.password)
+                "INSERT INTO users ( username, password) VALUES ( ?, ?)",
+                (user.username, user.password)
             )
+            return cursor.lastrowid

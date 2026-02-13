@@ -3,7 +3,7 @@ from model.tools.validation import id_validator, username_validator, password_va
 
 
 class User:
-    def __init__(self, user_id, username, password):
+    def __init__(self, username, password, user_id=None):
         self.user_id = user_id
         self.username = username
         self.password = password
