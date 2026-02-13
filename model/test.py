@@ -1,5 +1,5 @@
-from model import *
-from controller import *
+
+
 from model.entity.user_class import User
 from model.repository.user_repository import UserRepository
 

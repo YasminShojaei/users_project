@@ -1,4 +1,3 @@
-from controller import user_controller
 
 
 class MainProgram:
@@ -17,7 +16,7 @@ class MainProgram:
         user_input = input()
 
     def enter_database(self):
-        ...
+        pass
 
 
 

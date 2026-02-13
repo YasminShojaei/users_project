@@ -11,5 +11,5 @@ def username_validator(username):
 
 def password_validator(password):
     if not type(password) is str and re.match(r'^(?=.*[A-Za-z])(?=.*\d).{6,}$' and password):
-        raise TypeError('password must be a valid password at least 6 characters with one digit')
+        raise TypeError('password must be a valid password at least 6 characters with digit')
 

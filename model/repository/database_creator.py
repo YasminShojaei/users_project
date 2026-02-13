@@ -12,7 +12,7 @@ def create_database():
             )
         ''')
         connection.commit()
-        print("Database and table created successfully")
+        print("Database and table created")
     except Exception as e:
         print("Error:", e)
     finally:
